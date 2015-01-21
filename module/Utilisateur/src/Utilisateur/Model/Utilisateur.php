@@ -10,6 +10,9 @@ class Utilisateur implements InputFilterAwareInterface
 	public $id;
 	public $artist;
 	public $title;
+	
+	//public $nom;
+	
 	protected $inputFilter;
 	
 	public function exchangeArray($data)
@@ -17,6 +20,10 @@ class Utilisateur implements InputFilterAwareInterface
 		$this->id     = (!empty($data['id'])) ? $data['id'] : null;
 		$this->artist = (!empty($data['artist'])) ? $data['artist'] : null;
 		$this->title  = (!empty($data['title'])) ? $data['title'] : null;
+		
+		/* */
+		//$this->nom  = (!empty($data['nom'])) ? $data['nom'] : null;
+		/* */
 	}
 	
 	public function getArrayCopy()

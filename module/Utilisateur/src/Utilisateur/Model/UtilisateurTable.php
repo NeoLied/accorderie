@@ -34,6 +34,9 @@ class UtilisateurTable
 		$data = array(
 				'artist' => $utilisateur->artist,
 				'title'  => $utilisateur->title,
+				/* */
+				//'nom'  => $utilisateur->nom,
+				/* */
 		);
 
 		$id = (int) $utilisateur->id;
