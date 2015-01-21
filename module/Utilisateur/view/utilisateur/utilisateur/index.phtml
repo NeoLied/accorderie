@@ -1,1 +1,29 @@
 <?php
+
+ $title = 'Mes utilisateurs';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('utilisateur', array('action'=>'add'));?>">Ajouter des nouveaux utilisateurs</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Title</th>
+     <th>Artist</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($utilisateurs as $utilisateur) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($utilisateur->title);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->artist);?></td>
+     <td>
+         <a href="<?php echo $this->url('utilisateur',
+             array('action'=>'edit', 'id' => $utilisateur->id));?>">Edit</a>
+         <a href="<?php echo $this->url('utilisateur',
+             array('action'=>'delete', 'id' => $utilisateur->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

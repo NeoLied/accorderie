@@ -7,8 +7,13 @@ use Zend\View\Model\ViewModel;
 
 class UtilisateurController extends AbstractActionController
 {
+	protected $utilisateurTable;
+	
 	public function indexAction()
 	{
+		return new ViewModel(array(
+				'utilisateurs' => $this->getUtilisateurTable()->fetchAll(),
+		));
 	}
 
 	public function addAction()
@@ -21,5 +26,14 @@ class UtilisateurController extends AbstractActionController
 
 	public function deleteAction()
 	{
+	}
+	
+	public function getUtilisateurTable()
+	{
+		if (!$this->utilisateurTable) {
+			$sm = $this->getServiceLocator();
+			$this->utilisateurTable = $sm->get('Utilisateur\Model\UtilisateurTable');
+		}
+		return $this->utilisateurTable;
 	}
 }
