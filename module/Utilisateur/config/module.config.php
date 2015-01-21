@@ -1,31 +1,31 @@
 <?php
 return array(
-    'controller' => array(
-        'classes' => array(
-            'utilisateur/utilisateur' => 'Utilisateur\Controller\UtilisateurController',
-        ),
-    ),
+     'controllers' => array(
+         'invokables' => array(
+             'Utilisateur\Controller\Utilisateur' => 'Utilisateur\Controller\UtilisateurController',
+         ),
+     ),
 		'router' => array(
 				'routes' => array(
 						'utilisateur' => array(
-								'type' => 'segment',
+								'type'    => 'segment',
 								'options' => array(
-										'route' => '/utilisateur[/:action][/:id]',
+										'route'    => '/utilisateur[/:action][/:id]',
 										'constraints' => array(
 												'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-												'id' => '[0-9]+',
+												'id'     => '[0-9]+',
 										),
 										'defaults' => array(
-												'controller' => 'utilisateur',
-												'action' => 'index',
+												'controller' => 'Utilisateur\Controller\Utilisateur',
+												'action'     => 'index',
 										),
 								),
 						),
 				),
 		),
-    'view_manager' => array(
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-    ),
-);
+     'view_manager' => array(
+         'template_path_stack' => array(
+             'utilisateur' => __DIR__ . '/../view',
+         ),
+     ),
+ );
