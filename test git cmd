@@ -1,0 +1,14 @@
+[1mdiff --git a/public/index.php b/public/index.php[m
+[1mindex 4f62596..a42fd76 100644[m
+[1m--- a/public/index.php[m
+[1m+++ b/public/index.php[m
+[36m@@ -5,6 +5,7 @@[m
+  */[m
+ chdir(dirname(__DIR__));[m
+ [m
+[32m+[m
+ // Decline static file requests back to the PHP built-in webserver[m
+ if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))) {[m
+     return false;[m
+warning: LF will be replaced by CRLF in public/index.php.
+The file will have its original line endings in your working directory.
