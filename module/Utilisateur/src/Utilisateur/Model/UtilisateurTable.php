@@ -2,7 +2,6 @@
 namespace Utilisateur\Model;
 
 use Zend\Db\TableGateway\TableGateway;
-use Utilisateur;
 
 class UtilisateurTable
 {

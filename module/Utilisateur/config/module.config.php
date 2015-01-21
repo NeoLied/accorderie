@@ -1,10 +1,10 @@
 <?php
 return array(
-     'controllers' => array(
-         'invokables' => array(
-             'Utilisateur\Controller\Utilisateur' => 'Utilisateur\Controller\UtilisateurController',
-         ),
-     ),
+		'controllers' => array(
+				'invokables' => array(
+						'Utilisateur\Controller\Utilisateur' => 'Utilisateur\Controller\UtilisateurController',
+				),
+		),
 		'router' => array(
 				'routes' => array(
 						'utilisateur' => array(
@@ -23,9 +23,9 @@ return array(
 						),
 				),
 		),
-     'view_manager' => array(
-         'template_path_stack' => array(
-             'utilisateur' => __DIR__ . '/../view',
-         ),
-     ),
- );
+		'view_manager' => array(
+				'template_path_stack' => array(
+						'utilisateur' => __DIR__ . '/../view',
+				),
+		),
+);
