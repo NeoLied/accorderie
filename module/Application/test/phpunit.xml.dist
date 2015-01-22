@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="Bootstrap.php">
+<phpunit bootstrap="Bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="accorderie">
-            <directory>./ApplicationTest</directory>
+            <directory>./UtilisateurTest</directory>
         </testsuite>
     </testsuites>
 </phpunit>
