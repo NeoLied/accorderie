@@ -18,10 +18,13 @@
  </tr>
  <?php foreach ($utilisateurs as $utilisateur) : ?>
  <tr>
-     <td><?php echo $this->escapeHtml($utilisateur->title);?></td>
-     <td><?php echo $this->escapeHtml($utilisateur->artist);?></td>
      <td><?php echo $this->escapeHtml($utilisateur->nom);?></td>
      <td><?php echo $this->escapeHtml($utilisateur->prenom);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->telephone);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->mail);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->adresse);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->code_postal);?></td>
+     
      <td>
          <a href="<?php echo $this->url('utilisateur',
              array('action'=>'edit', 'id' => $utilisateur->id));?>">Edit</a>
