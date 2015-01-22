@@ -14,6 +14,7 @@ namespace Utilisateur\Form;
              'name' => 'id',
              'type' => 'Hidden',
          ));
+         
          $this->add(array(
              'name' => 'title',
              'type' => 'Text',
@@ -21,6 +22,7 @@ namespace Utilisateur\Form;
                  'label' => 'Title',
              ),
          ));
+         
          $this->add(array(
              'name' => 'artist',
              'type' => 'Text',
@@ -28,6 +30,55 @@ namespace Utilisateur\Form;
                  'label' => 'Artist',
              ),
          ));
+         
+         $this->add(array(
+         		'name' => 'nom',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Nom',
+         		),
+         ));
+         
+         $this->add(array(
+         		'name' => 'prenom',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Prénom',
+         		),
+         ));
+         
+         $this->add(array(
+         		'name' => 'telephone',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Téléphone',
+         		),
+         ));
+         
+         $this->add(array(
+         		'name' => 'mail',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Adresse Mail',
+         		),
+         ));
+         
+         $this->add(array(
+         		'name' => 'adresse',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Adresse',
+         		),
+         ));
+         
+         $this->add(array(
+         		'name' => 'code_postal',
+         		'type' => 'Text',
+         		'options' => array(
+         				'label' => 'Code Postal',
+         		),
+         ));
+         
          $this->add(array(
              'name' => 'submit',
              'type' => 'Submit',

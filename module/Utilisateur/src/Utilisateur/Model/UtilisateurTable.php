@@ -32,11 +32,14 @@ class UtilisateurTable
 	public function saveUtilisateur(Utilisateur $utilisateur)
 	{
 		$data = array(
-				'artist' => $utilisateur->artist,
-				'title'  => $utilisateur->title,
-				/* */
-				//'nom'  => $utilisateur->nom,
-				/* */
+				'artist' 	  => $utilisateur->artist,
+				'title'  	  => $utilisateur->title,
+				'nom'    	  => $utilisateur->nom,
+				'prenom' 	  => $utilisateur->prenom,
+				'mail'   	  => $utilisateur->mail,
+				'code_postal' => $utilisateur->code_postal,
+				'adresse'     => $utilisateur->adresse,
+				'telephone'   => $utilisateur->telephone,
 		);
 
 		$id = (int) $utilisateur->id;
