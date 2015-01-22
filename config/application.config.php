@@ -4,7 +4,8 @@ return array(
     'modules' => array(
         'Application',
     	'Utilisateur',
-    	'Annonce',			
+    	'Annonce',
+    	'SanAuth'			
     ),
 
     // These are various options for the listeners attached to the ModuleManager
