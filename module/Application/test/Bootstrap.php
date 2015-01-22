@@ -1,5 +1,5 @@
 <?php
-namespace ApplicationTest;
+namespace ApplicationTest;   //Change this namespace for your test
 
 use Zend\Loader\AutoloaderFactory;
 use Zend\Mvc\Service\ServiceManagerConfig;
@@ -9,7 +9,6 @@ use RuntimeException;
 
 error_reporting(E_ALL | E_STRICT);
 chdir(__DIR__);
-
 
 class Bootstrap
 {
@@ -110,20 +109,3 @@ class Bootstrap
 }
 
 Bootstrap::init();
-And a file called TestConfig.php.dist
-
-<?php
-return array(
-    'modules' => array(
-        'Application',
-    ),
-    'module_listener_options' => array(
-        'config_glob_paths'    => array(
-            '../../../config/autoload/{,*.}{global,local}.php',
-        ),
-        'module_paths' => array(
-            'module',
-            'vendor',
-        ),
-    ),
-);

@@ -2,6 +2,7 @@
 
 namespace ApplicationTest\Controller;
 
+use ApplicationTest;
 use ApplicationTest\Bootstrap;
 use Zend\Mvc\Router\Http\TreeRouteStack as HttpRouter;
 use Application\Controller\IndexController;
