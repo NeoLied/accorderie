@@ -46,6 +46,12 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
 							$resultSetPrototype->setArrayObjectPrototype(new Utilisateur());
 							return new TableGateway('utilisateur', $dbAdapter, null, $resultSetPrototype);
 						},
+						'Utilisateur\Model\Utilisateur' => function($sm){
+							$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+							$user = new \Utilisateur\Model\Utilisateur();
+							$album->setDbAdapter($dbAdapter);
+							return $user;
+						}
 				),
 		);
 	}

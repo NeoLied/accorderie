@@ -168,10 +168,22 @@ class Utilisateur implements InputFilterAwareInterface
 											'max'      => 100,
 									),
 							),
+							
 							array(
 									'name'    => 'EmailAddress',
 									),
+							
 							),
+					
+							/*array(
+									'name'    => 'Db\RecordExists',
+									'options' => array(
+											'table' => 'utilisateur',
+											'field' => 'mail',
+											'adapter' => $dbAdapter
+									),
+							),*/
+							
 			));
 	
 			$this->inputFilter = $inputFilter;
