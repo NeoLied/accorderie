@@ -49,7 +49,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
 						'Utilisateur\Model\Utilisateur' => function($sm){
 							$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
 							$user = new \Utilisateur\Model\Utilisateur();
-							$album->setDbAdapter($dbAdapter);
+							$user->setDbAdapter($dbAdapter);
 							return $user;
 						}
 				),

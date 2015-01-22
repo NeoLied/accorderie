@@ -16,6 +16,7 @@ class Utilisateur implements InputFilterAwareInterface
 	public $telephone;
 	
 	protected $inputFilter;
+	private $_dbAdapter;
 	
 	public function exchangeArray($data)
 	{
@@ -31,6 +32,14 @@ class Utilisateur implements InputFilterAwareInterface
 	public function getArrayCopy()
 	{
 		return get_object_vars($this);
+	}
+	
+	public function setDbAdapter($dbAdapter) {
+		$this->_dbAdapter = $dbAdapter;
+	}
+	
+	public function getDbAdapter() {
+		return $this->_dbAdapter;
 	}
 	
 	public function setInputFilter(InputFilterInterface $inputFilter)
@@ -171,18 +180,20 @@ class Utilisateur implements InputFilterAwareInterface
 							
 							array(
 									'name'    => 'EmailAddress',
-									),
-							
-							),
+							),							
 					
-							/*array(
-									'name'    => 'Db\RecordExists',
-									'options' => array(
-											'table' => 'utilisateur',
-											'field' => 'mail',
-											'adapter' => $dbAdapter
-									),
-							),*/
+							array(
+                     	 		'name'    => 'Db\NoRecordExists',
+                      			'options' => array(
+                        			'table' => 'utilisateur',
+                        			'field' => 'mail',
+                      				'adapter' => $this->_dbAdapter,
+                        			'messages' => array(
+                            			'recordFound'   => "Email already exist ... !",  
+                        			),
+                    			),
+                			),
+					),
 							
 			));
 	

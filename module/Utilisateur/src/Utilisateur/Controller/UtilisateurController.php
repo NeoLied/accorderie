@@ -24,7 +24,7 @@ class UtilisateurController extends AbstractActionController
 		
 		$request = $this->getRequest();
 		if ($request->isPost()) {
-			$utilisateur = new Utilisateur();
+			$utilisateur = $this->getServiceLocator()->get('Utilisateur/Model/Utilisateur');
 			$form->setInputFilter($utilisateur->getInputFilter());
 			$form->setData($request->getPost());
 		
