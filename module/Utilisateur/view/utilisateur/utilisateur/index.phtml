@@ -8,14 +8,20 @@
 
  <table class="table">
  <tr>
-     <th>Title</th>
-     <th>Artist</th>
+     <th>Nom</th>
+     <th>Prénom</th>
+     <th>Téléphone</th>
+     <th>Mail</th>
+     <th>Adresse</th>
+     <th>Code Postal</th>
      <th>&nbsp;</th>
  </tr>
  <?php foreach ($utilisateurs as $utilisateur) : ?>
  <tr>
      <td><?php echo $this->escapeHtml($utilisateur->title);?></td>
      <td><?php echo $this->escapeHtml($utilisateur->artist);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->nom);?></td>
+     <td><?php echo $this->escapeHtml($utilisateur->prenom);?></td>
      <td>
          <a href="<?php echo $this->url('utilisateur',
              array('action'=>'edit', 'id' => $utilisateur->id));?>">Edit</a>
