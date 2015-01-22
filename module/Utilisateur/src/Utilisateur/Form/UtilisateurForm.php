@@ -16,22 +16,6 @@ namespace Utilisateur\Form;
          ));
          
          $this->add(array(
-             'name' => 'title',
-             'type' => 'Text',
-             'options' => array(
-                 'label' => 'Title',
-             ),
-         ));
-         
-         $this->add(array(
-             'name' => 'artist',
-             'type' => 'Text',
-             'options' => array(
-                 'label' => 'Artist',
-             ),
-         ));
-         
-         $this->add(array(
          		'name' => 'nom',
          		'type' => 'Text',
          		'options' => array(

@@ -1,5 +1,5 @@
 <?php
- $title = 'Formulaire d\'inscription';
+ $title = 'Ajouter un nouvel utilisateur';
  $this->headTitle($title);
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
@@ -9,8 +9,6 @@
 
  echo $this->form()->openTag($form);
  echo $this->formHidden($form->get('id'));
- echo $this->formRow($form->get('title'));
- echo $this->formRow($form->get('artist'));
  
  echo $this->formRow($form->get('nom'));
  echo $this->formRow($form->get('prenom'));

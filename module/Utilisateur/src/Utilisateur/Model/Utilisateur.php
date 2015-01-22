@@ -8,9 +8,6 @@ use Zend\InputFilter\InputFilterInterface;
 class Utilisateur implements InputFilterAwareInterface
 {
 	public $id;
-	public $artist;
-	public $title;
-	
 	public $nom;
 	public $prenom;
 	public $mail;
@@ -23,9 +20,6 @@ class Utilisateur implements InputFilterAwareInterface
 	public function exchangeArray($data)
 	{
 		$this->id     = (!empty($data['id'])) ? $data['id'] : null;
-		$this->artist = (!empty($data['artist'])) ? $data['artist'] : null;
-		$this->title  = (!empty($data['title'])) ? $data['title'] : null;
-		
 		$this->nom  = (!empty($data['nom'])) ? $data['nom'] : null;
 		$this->prenom  = (!empty($data['prenom'])) ? $data['prenom'] : null;
 		$this->mail  = (!empty($data['mail'])) ? $data['mail'] : null;
@@ -54,44 +48,6 @@ class Utilisateur implements InputFilterAwareInterface
 					'required' => true,
 					'filters'  => array(
 							array('name' => 'Int'),
-					),
-			));
-	
-			$inputFilter->add(array(
-					'name'     => 'artist',
-					'required' => true,
-					'filters'  => array(
-							array('name' => 'StripTags'),
-							array('name' => 'StringTrim'),
-					),
-					'validators' => array(
-							array(
-									'name'    => 'StringLength',
-									'options' => array(
-											'encoding' => 'UTF-8',
-											'min'      => 1,
-											'max'      => 100,
-									),
-							),
-					),
-			));
-	
-			$inputFilter->add(array(
-					'name'     => 'title',
-					'required' => true,
-					'filters'  => array(
-							array('name' => 'StripTags'),
-							array('name' => 'StringTrim'),
-					),
-					'validators' => array(
-							array(
-									'name'    => 'StringLength',
-									'options' => array(
-											'encoding' => 'UTF-8',
-											'min'      => 1,
-											'max'      => 100,
-									),
-							),
 					),
 			));
 			
