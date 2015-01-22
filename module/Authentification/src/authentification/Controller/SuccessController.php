@@ -1,6 +1,5 @@
 <?php
-//module/SanAuth/src/SanAuth/Controller/SuccessController.php
-namespace SanAuth\Controller;
+namespace Authentification\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;

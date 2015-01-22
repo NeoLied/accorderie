@@ -5,7 +5,7 @@ return array(
         'Application',
     	'Utilisateur',
     	'Annonce',
-    	'SanAuth',			
+    	'Authentification',			
     ),
 
     // These are various options for the listeners attached to the ModuleManager

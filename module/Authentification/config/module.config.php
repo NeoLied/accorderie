@@ -2,8 +2,8 @@
 return array(
 		'controllers' => array(
 				'invokables' => array(
-						'SanAuth\Controller\Auth' => 'SanAuth\Controller\AuthController',
-						'SanAuth\Controller\Success' => 'SanAuth\Controller\SuccessController'
+						'Authentification\Controller\Auth' => 'Authentification\Controller\AuthController',
+						'Authentification\Controller\Success' => 'Authentification\Controller\SuccessController'
 				),
 		),
 		'router' => array(
@@ -12,9 +12,9 @@ return array(
 						'login' => array(
 								'type'    => 'Literal',
 								'options' => array(
-										'route'    => '/auth',
+										'route'    => '/authentification',
 										'defaults' => array(
-												'__NAMESPACE__' => 'SanAuth\Controller',
+												'__NAMESPACE__' => 'Authentification\Controller',
 												'controller'    => 'Auth',
 												'action'        => 'login',
 										),
@@ -39,9 +39,9 @@ return array(
 						'success' => array(
 								'type'    => 'Literal',
 								'options' => array(
-										'route'    => '/success',
+										'route'    => '/succes',
 										'defaults' => array(
-												'__NAMESPACE__' => 'SanAuth\Controller',
+												'__NAMESPACE__' => 'Authentification\Controller',
 												'controller'    => 'Success',
 												'action'        => 'index',
 										),
@@ -67,7 +67,7 @@ return array(
 		),
 		'view_manager' => array(
 				'template_path_stack' => array(
-						'SanAuth' => __DIR__ . '/../view',
+						'Authentification' => __DIR__ . '/../view',
 				),
 		),
 );

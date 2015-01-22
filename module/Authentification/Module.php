@@ -1,6 +1,5 @@
 <?php
-//module/SanAuth/Module.php
-namespace SanAuth;
+namespace Authentification;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Authentication\Storage;
@@ -29,23 +28,20 @@ class Module implements AutoloaderProviderInterface
 	{
 		return array(
 				'factories'=>array(
-						'SanAuth\Model\MyAuthStorage' => function($sm){
-							return new \SanAuth\Model\MyAuthStorage('zend_tuto');
+						'Authentification\Model\MyAuthStorage' => function($sm){
+							return new \Authentification\Model\MyAuthStorage('zend_tuto');
 						},
 						 
 						'AuthService' => function($sm) {
-							//My assumption, you've alredy set dbAdapter
-							//and has users table with columns : user_name and pass_word
-							//that password hashed with md5
+							// Ici connexion BDD
 							$dbAdapter           = $sm->get('Zend\Db\Adapter\Adapter');
-							//$dbTableAuthAdapter  = new DbTableAuthAdapter($dbAdapter,
-							//		'users','user_name','pass_word', 'MD5(?)');
+							//		'table','login','mdp', 'MD5(?)');
 							$dbTableAuthAdapter  = new DbTableAuthAdapter($dbAdapter,
 									'users','user_name','pass_word', '');
-							 
+							
 							$authService = new AuthenticationService();
 							$authService->setAdapter($dbTableAuthAdapter);
-							$authService->setStorage($sm->get('SanAuth\Model\MyAuthStorage'));
+							$authService->setStorage($sm->get('Authentification\Model\MyAuthStorage'));
 
 							return $authService;
 						},
