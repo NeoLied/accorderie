@@ -16,6 +16,29 @@ class UtilisateurController extends AbstractActionController
 				'utilisateurs' => $this->getUtilisateurTable()->fetchAll(),
 		));
 	}
+	
+	public function inscriptionAction()
+	{
+		$form = new UtilisateurForm();
+		$form->get('submit')->setValue('Add');
+		
+		$request = $this->getRequest();
+		if ($request->isPost()) {
+			$utilisateur = new Utilisateur();
+			$form->setInputFilter($utilisateur->getInputFilter());
+			$form->setData($request->getPost());
+		
+			if ($form->isValid()) {
+				$utilisateur->exchangeArray($form->getData());
+				$this->getUtilisateurTable()->saveUtilisateur($utilisateur);
+		
+				// Redirect to list of utilisateurs
+				return $this->redirect()->toRoute('utilisateur', array(
+													'action' => 'inscription'));
+			}
+		}
+		return array('form' => $form);
+	}
 
 	public function addAction()
 	{
@@ -107,6 +130,7 @@ class UtilisateurController extends AbstractActionController
 				'utilisateur' => $this->getUtilisateurTable()->getUtilisateur($id)
 		);
 	}
+	
 	
 	public function getUtilisateurTable()
 	{
