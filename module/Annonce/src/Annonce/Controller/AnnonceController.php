@@ -47,9 +47,6 @@ class AnnonceController extends AbstractActionController
 					'action' => 'add'
 			));
 		}
-		
-		// Get the Album with the specified id.  An exception is thrown
-		// if it cannot be found, in which case go to the index page.
 		try {
 			$annonce = $this->getAnnonceTable()->getAnnonce($id);
 		}
@@ -71,7 +68,6 @@ class AnnonceController extends AbstractActionController
 			if ($form->isValid()) {
 				$this->getAnnonceTable()->saveAnnonce($annonce);
 		
-				// Redirect to list of albums
 				return $this->redirect()->toRoute('annonce');
 			}
 		}

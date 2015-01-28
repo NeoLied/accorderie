@@ -40,6 +40,12 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
 							$table = new AnnonceTable($tableGateway);
 							return $table;
 						},
+						'Annonce\Model\Annonce' =>  function($sm) {
+							$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+							$resultSetPrototype = new ResultSet();
+							$resultSetPrototype->setArrayObjectPrototype(new Annonce());
+							return new TableGateway('annonce', $dbAdapter, null, $resultSetPrototype);
+						},
 						'AnnonceTableGateway' => function ($sm) {
 							$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
 							$resultSetPrototype = new ResultSet();
